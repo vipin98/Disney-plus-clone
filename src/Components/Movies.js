@@ -1,33 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { selectMovies } from '../features/movie/movieSlice'
+import { useSelector } from 'react-redux'
 
 function Movies() {
+
+    const movies = useSelector(selectMovies);
+
+    // console.log("tj", movies)
     return (
         <Container>
             <h4>Recommende for You</h4>
             <Contant>
-                <Wrap>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CMANXeq03jKGp-AgIhQDmr2UaE6-_zGqgg&usqp=CAU" />
-                </Wrap>
-                <Wrap>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CMANXeq03jKGp-AgIhQDmr2UaE6-_zGqgg&usqp=CAU" />
-                </Wrap>
-                <Wrap>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CMANXeq03jKGp-AgIhQDmr2UaE6-_zGqgg&usqp=CAU" />
-                </Wrap>
-                <Wrap>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CMANXeq03jKGp-AgIhQDmr2UaE6-_zGqgg&usqp=CAU" />
-                </Wrap>
-                <Wrap>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CMANXeq03jKGp-AgIhQDmr2UaE6-_zGqgg&usqp=CAU" />
-                </Wrap>
-                <Wrap>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CMANXeq03jKGp-AgIhQDmr2UaE6-_zGqgg&usqp=CAU" />
-                </Wrap>
-                <Wrap>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CMANXeq03jKGp-AgIhQDmr2UaE6-_zGqgg&usqp=CAU" />
-                </Wrap>
+                {movies &&
+                    movies.map((movie) => (
+                        <Link key={movie.id} to={`/detail/${movie.id}`}>
+                            <Wrap key={movie.id}>
+                                <img src={movie.cardImg} />
+                            </Wrap>
+                        </Link>
 
+                    ))
+                }
             </Contant>
         </Container>
     )

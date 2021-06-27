@@ -1,22 +1,66 @@
 import React from 'react'
 import styled from 'styled-components'
 function Viewers() {
+    const stopMovie = (e) => {
+        e.target.pause();
+
+    }
+
+    const playMovie = (e) => {
+        e.target.play();
+
+    }
     return (
         <Container>
             <Wrap>
-                <img src="images/viewers-disney.png" />
+                {/* <img src="images/viewers-disney.png" /> */}
+                <video
+                    onMouseOver={playMovie}
+                    onMouseOut={stopMovie}
+                    src={`videos/1564674844-disney.mp4`}
+                    poster='images/viewers-disney.png'
+                    preload='auto'
+                    loop />
             </Wrap>
             <Wrap>
-                <img src="images/viewers-pixar.png" />
+                {/* <img src="images/viewers-pixar.png" /> */}
+                <video
+                    onMouseOver={playMovie}
+                    onMouseOut={stopMovie}
+                    src='videos/1564676714-pixar.mp4'
+                    poster='images/viewers-pixar.png'
+                    preload='auto'
+                    loop />
             </Wrap>
             <Wrap>
-                <img src="images/viewers-marvel.png" />
+                {/* <img src="images/viewers-marvel.png" /> */}
+                <video
+                    onMouseOver={playMovie}
+                    onMouseOut={stopMovie}
+                    src='videos/1564676115-marvel.mp4'
+                    poster='images/viewers-marvel.png'
+                    preload='auto'
+                    loop />
             </Wrap>
             <Wrap>
-                <img src="images/viewers-starwars.png" />
+                {/* <img src="images/viewers-starwars.png" /> */}
+                <video
+                    onMouseOver={playMovie}
+                    onMouseOut={stopMovie}
+                    src='videos/1608229455-star-wars.mp4'
+                    poster='images/viewers-starwars.png'
+                    preload='auto'
+                    loop />
             </Wrap>
             <Wrap>
-                <img src="images/viewers-national.png" />
+                {/* <img src="images/viewers-national.png" /> */}
+                <video
+                    onMouseOver={playMovie}
+                    onMouseOut={stopMovie}
+                    src='videos/1564676296-national-geographic.mp4'
+                    poster='images/viewers-national.png'
+                    preload='auto'
+                    loop />
             </Wrap>
         </Container>
     )
@@ -42,7 +86,7 @@ const Wrap = styled.div`
     rgba(0 0 0 /73%) 0px 16px 10px -10px;
     transition: all 250ms cubic-bezier(0.25,0.46,0.45,0.94) 0s;
 
-   img {
+    video {
       width:100%;
       height:100%;
       object-fit:cover;
