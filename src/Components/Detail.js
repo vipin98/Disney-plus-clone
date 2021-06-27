@@ -92,7 +92,7 @@ const ImageTitle = styled.div`
       min-height: 170px;
       width:35vw;
       min-width:200px;
-      margin-top: 60px;
+      padding-top: 10px;
 
       img {
           width : 100%;
@@ -105,6 +105,7 @@ const ImageTitle = styled.div`
 const Controls = styled.div`
 display: flex;
 align-items: center;
+padding-top: 50px;
 `
 const PlayButton = styled.button`
 border-radius: 4px;
